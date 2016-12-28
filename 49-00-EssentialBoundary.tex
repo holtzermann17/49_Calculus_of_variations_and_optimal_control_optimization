@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{EssentialBoundary}
+\pmcreated{2013-03-22 15:01:54}
+\pmmodified{2013-03-22 15:01:54}
+\pmowner{paolini}{1187}
+\pmmodifier{paolini}{1187}
+\pmtitle{essential boundary}
+\pmrecord{9}{36742}
+\pmprivacy{1}
+\pmauthor{paolini}{1187}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49-00}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\newcommand{\R}{\mathbf R}
+
+\begin{document}
+Let $E\subset \R^n$ be a measurable set. We define the \emph{essential boundary} of $E$ as
+\[
+  \partial^* E := \{x\in\R^n\colon 0 < | E\cap B_\rho(x)| < |B_\rho(x)|,\quad \forall \rho>0\}
+\]
+where $|\cdot|$ is the Lebesgue measure.
+
+Compare the definition of $\partial^* E$ with the definition of the topological boundary $\partial E$ which can be written as
+\[
+  \partial E = \{ x \in \R^n \colon \emptyset \subsetneq E\cap B_\rho(x) \subsetneq B_\rho(x),\quad \forall \rho>0\}.
+\]
+Hence one clearly has $\partial^* E\subset \partial E$.
+
+Notice that the essential boundary does not depend on the Lebesgue 
+representative of the set $E$, in the sense that if $|E\triangle F|=0$ then 
+$\partial^* E = \partial ^* F$. For example if $E=\mathbf Q^n\subset \R^n$ is 
+the set of points with rational coordinates, one has $\partial^* E=\emptyset$ 
+while $\partial E=\R^n$.
+
+Nevertheless one can easily prove that $\partial^*E$ is always a closed set (in the usual sense).
+
+%%%%%
+%%%%%
+\end{document}

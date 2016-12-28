@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{MountainPassTheorem}
+\pmcreated{2013-03-22 15:19:19}
+\pmmodified{2013-03-22 15:19:19}
+\pmowner{ncrom}{8997}
+\pmmodifier{ncrom}{8997}
+\pmtitle{mountain pass theorem}
+\pmrecord{8}{37128}
+\pmprivacy{1}
+\pmauthor{ncrom}{8997}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49J40}
+%\pmkeywords{Mountain Pass}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+Let $X$ a real Banach space and $F \in C^{1}(X,\mathbb{R})$. Consider $K$ a compact metric space, and $K^{*} \subset K$ a closed nonempty subset of $K$. If $p^{*} : K^{*} \rightarrow X$ is a continuous mapping, set 
+\[
+\mathcal{P} = \{ p \in C(K, \, X); \; p = p^{*} \; \textrm{on } K^{*} \}.
+\]
+
+Define 
+\[
+c = \inf_{p \in \mathcal{P}} \max_{t \in K} F(p(t)).
+\]
+
+Assume that
+\begin{equation}\label{eq1}
+c > \max_{t \in K^{*}} F(p^{*}(t)).
+\end{equation}
+Then there exists a sequence $(x_{n})$ in $X$ such that
+\begin{enumerate}
+\item[(i)] $\lim\limits_{n \rightarrow \infty} F(x_{n}) = c$;
+
+\item[(ii)] $\lim\limits_{n \rightarrow \infty} \| F'(x_{n})\|  = 0$.
+\end{enumerate}
+
+The name of this theorem is a consequence of a simplified visualization for the objects from theorem. If we consider the set $K^{*} = \{ A, \, B\}$, where $A$ and $B$ are two villages, $\mathcal{P}$ is the set of all the routes from $A$ to $B$, and $F(x)$ represents the altitude of point $x$; then the assumption (\ref{eq1}) is equivalent to say that the villages $A$ and $B$ are separated with a mountains chain. So, the conclusion of the theorem tell us that exists a route between the villages with a minimal altitude. With other words exists a  ``mountain pass'' .
+%%%%%
+%%%%%
+\end{document}

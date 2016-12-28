@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{RectifiableSet}
+\pmcreated{2013-03-22 14:28:12}
+\pmmodified{2013-03-22 14:28:12}
+\pmowner{paolini}{1187}
+\pmmodifier{paolini}{1187}
+\pmtitle{rectifiable set}
+\pmrecord{11}{35991}
+\pmprivacy{1}
+\pmauthor{paolini}{1187}
+\pmtype{Definition}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49Q15}
+\pmdefines{density}
+\pmdefines{tangent vector}
+\pmdefines{approximate tangent plane}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\renewcommand{\H}{\mathcal H}
+\newcommand{\R}{\mathbb R}
+\begin{document}
+Let us denote with $\H^m$ the $m$-dimensional Hausdorff measure in $\R^n$.
+
+A set $S\subset \R^n$ is said to be \emph{countably $m$-rectifiable} if there exists a countable sequence of Lipschitz continuous functions $f_k\colon\R^m \to \R^n$ such that
+\[
+  S\subset \bigcup_k f_k(\R^m).
+\]
+
+A set $S\subset \R^n$ is said to be \emph{countably $(\H^m,m)$-rectifiable} if 
+there exists a set $S'$ which is countable $m$-rectifiable and such that $\H^m(S\setminus S')=0$.
+
+A set $S\subset \R^n$ is said to be \emph{$(\H^m,m)$-rectifiable} or simply \emph{$m$-rectifiable} if it is $(\H^m,m)$-rectifiable and $\H^m(S)<+\infty$. 
+
+If $S$ is any Borel subset of $\R^n$ and
+$x\in \R^n$ is given, one can define the \emph{density} of $S$ in $x$ as
+\[
+  \Theta^m(S,x) = \lim_{\rho \to 0} \frac{\H^m(S\cap B_\rho(x))}
+{\omega_m \rho^m}
+\]
+where $\omega_m$ is the Lebesgue measure of the unit ball in $\R^m$. Notice that an $m$-dimensional plane $\Pi$ has density $1$ in all points $x\in\Pi$ and density $0$ in all points $x\not\in\Pi$.
+
+It turns out that if $S$ is rectifiable, then in $\H^m$-a.e.\ point $x\in S$ the density $\Theta^m(S,x)$ exists and is equal to $1$. Moreover in $\H^m$-a.e.\ point $x\in S$ there exists an \emph{approximate tangent plane} to $S$ as defined below.
+
+Given a point $x\in S\subset \R^n$ and a vector $v\in \R^n$ we say that $v$ is tangent to $S$ in $x$ if there exists a sequence of points $x_k\in S$, $x_k\to x$ and a sequence of positive numbers $\lambda_k$ such that 
+\[
+  \lim_{k\to \infty} \lambda_k (x_k -x) = v.
+\]
+If $S$ is an $m$-dimensional manifold, then the set of tangent vectors to a point $x\in S$ is nothing else than the usual tangent plane to $S$ in $x$.
+
+We say that a vector $v$ is \emph{approximately tangent} to $S$ in $x$ if it is 
+a tangent vector to every subset $S'$ of $S$ such that $\Theta^m(S\setminus S',x)=0$. Notice that every tangent vector is also an approximately tangent vector while the converse is not always true, as it is shown in an example below. The point, here, is that being the set $S$ defined $\H^m$-almost everywhere, we need a stronger definition for tangent vectors.
+
+The \emph{approximate tangent cone} to $S$ in $x$ is the set of all approximately tangent vectors to $S$ in $x$ (notice that if $v$ is a tangent vector then $\lambda v$ is also a tangent vector, for all $\lambda>0$).
+If the approximate tangent cone is an $m$-dimensional vector subspace of $\R^n$, it is called the \emph{approximate tangent plane}.
+
+Notice that if $S\subset \R^n$ is any $m$-dimensional regular surface, 
+and $Q$ is the set of all points of $\R^n$ with rational coordinates, then the set $S\cup Q$ is an $m$-rectifiable set since $\H^1(Q)=0$. Notice, however, that $\overline{S\cup Q} = \R^n$ and consequently every vector $v$ is tangent to $S\cup Q$ in every point $x\in S\cup Q$. On the other hand the approximately tangent vectors to $S\cup Q$ are only the tangent vectors to $S$, because the set $Q$ has density $0$ everywhere.
+
+\begin{thebibliography}{9}
+\bibitem{Mor}
+Frank Morgan: \emph{Geometric Measure Theory: A Beginner's Guide}.
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

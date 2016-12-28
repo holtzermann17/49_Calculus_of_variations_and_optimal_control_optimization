@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{SecantMethod}
+\pmcreated{2013-03-22 15:39:22}
+\pmmodified{2013-03-22 15:39:22}
+\pmowner{bloftin}{6104}
+\pmmodifier{bloftin}{6104}
+\pmtitle{secant method}
+\pmrecord{10}{37589}
+\pmprivacy{1}
+\pmauthor{bloftin}{6104}
+\pmtype{Algorithm}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49M15}
+\pmrelated{MethodsToFindExtremum}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+\begin{document}
+The secant method which is similar to the Newton-Raphson method is used to find the extremum value for a function over an interval for which the defined function has only one extremum.  If there is more then one minimum or maximum, then convergence is not guaranteed.
+
+The advantage over the Newton-Raphson method is that the secant method does not require the second derivative so only one function is used, the derivative.  However, two initial guesses are needed.  The algorithm to find the extremum is to iterate using the following expression 
+
+$$ x_k = x_k - f'(x_k) \frac{x_k - x_{k-1}}{f'(x_k) - f'(x_{k-1})} $$
+
+An analytical example is given below for the simple function
+
+$$ f(x) = x^2 + 1 $$
+
+taking the derivative yields
+
+$$ f'(x) = 2x $$
+
+So for the initial guesses of $x_0 = 3$ and $x_1 = 5$, $x_2$, the first iteration evaluates to
+
+$$x_2 = 5 - f'(x_1) \left [ \frac{5 - 3}{f'(x_1) - f'(x_0)} \right ] $$
+
+The derivatives at these two points are
+
+$$ f'(x_1) = 10$$
+$$ f'(x_0) = 6$$
+
+giving us the value for the first iteration of 
+
+$x_2 = 0$.
+
+To check when we are done iterating, we need one more iteration for comparison, so
+
+$$x_3 = x_2 - f'(x_2) \left [ \frac{0 - 5}{f'(x_2) - f'(x_1)} \right ] $$
+
+which is
+
+$x_3 = 0$
+
+Since $x_3 - x_2 = 0$, we are done and our extremum is $0$.
+
+Not every function is so easy to iterate analytically and we must resort to numerical means.  The attached file, \PMlinktofile{secantMethod1.m}{secantMethod1.m}, shows how to iterate using matlab on the more complicated function
+
+$$ f(x) = x \sqrt{100 - x^2} $$
+
+One still must be careful when using the secant method since the above function has a maximum and a minimum on the interval of [-10,10] and you will not get convergence if your initial guesses are -2 and 2.  However, on the interval of [0,10], there is only one extremum, so choose guesses of 5 and 6.  Then the matlab function converges to the extremum of
+
+$5*\sqrt{2} = 7.0711$
+
+which is a maximum as the figure below shows
+
+\begin{figure}
+\includegraphics[scale = .683]{secantMethod1.eps}
+\caption{Example Function}
+\end{figure}
+
+\subsection{References}
+
+[1] Tragesser, S. "\PMlinkescapetext{Trajectory} Optimization", lecture notes, University of Colorado at Colorado Springs, Spring 2006.
+%%%%%
+%%%%%
+\end{document}

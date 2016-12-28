@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NthRootByNewtonsMethod}
+\pmcreated{2013-03-22 19:09:38}
+\pmmodified{2013-03-22 19:09:38}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{nth root by Newton's method}
+\pmrecord{10}{42066}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49M15}
+\pmclassification{msc}{65H05}
+\pmclassification{msc}{26A06}
+\pmsynonym{cube root of 2}{NthRootByNewtonsMethod}
+\pmrelated{NthRoot}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+\PMlinkescapeword{formula}
+The Newton's method is very suitable for computing approximate values of higher $n^{\mathrm{th}}$ \PMlinkname{roots}{NthRoot} of positive numbers (and odd roots of negative numbers!).\\
+
+The general recurrence formula 
+$$x_{k+1} \;=\; x_k-\frac{f(x_k)}{f'(x_k)}$$
+of the method for determining the zero of a function $f$, applied to 
+$$f(x) \;:=\; x^n\!-\!\alpha$$
+whose zero is $\sqrt[n]{\alpha}$, reads
+\begin{align}
+x_{k+1} \:=\; \frac{1}{n}\left[(n\!-\!1)x_k+\frac{\alpha}{x_k^{n-1}}\right].
+\end{align}
+For a radicand $\alpha$, beginning from some initial value $x_0$ and using (1) repeatedly with successive values of 
+$k$, one obtains after a few steps a sufficiently accurate value of $\sqrt[n]{\alpha}$ if $x_0$ was not very far from the searched root.\\
+
+Especially for cube root $\sqrt[3]{\alpha}$, the formula (1) is
+\begin{align}
+x_{k+1} \:=\; \frac{1}{3}\left[2x_k+\frac{\alpha}{x_k^2}\right].
+\end{align}
+For example, if one wants to compute $\sqrt[3]{2}$ and uses\, $x_0 = 1$, already the fifth step gives 
+$$x_5 \;=\; 1.259921049894873$$
+which \PMlinkescapetext{contains fifteen right} decimals.
+
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{EquationOfCatenaryViaCalculusOfVariations}
+\pmcreated{2013-03-22 19:12:07}
+\pmmodified{2013-03-22 19:12:07}
+\pmowner{pahio}{2872}
+\pmmodifier{pahio}{2872}
+\pmtitle{equation of catenary via calculus of variations}
+\pmrecord{10}{42117}
+\pmprivacy{1}
+\pmauthor{pahio}{2872}
+\pmtype{Derivation}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49K05}
+\pmclassification{msc}{49K22}
+\pmclassification{msc}{47A60}
+\pmrelated{Catenary}
+\pmrelated{CalculusOfVariations}
+\pmrelated{LeastSurfaceOfRevolution}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+%\usepackage{graphicx}
+% for neatly defining theorems and propositions
+ \usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+
+% define commands here
+
+\theoremstyle{definition}
+\newtheorem*{thmplain}{Theorem}
+
+\begin{document}
+Using the mechanical principle that the centre of mass \PMlinkescapetext{places} itself as low as possible, determine the equation of the curve formed by a \PMlinkescapetext{flexible homogeneous wire or a thin chain with length} $l$ when supported at its ends in the points \,$P_1 = (x_1,\,y_1)$\, and\, $P_2 = (x_2,\,y_2)$.\\
+
+
+We have an isoperimetric problem 
+\begin{align}
+\mbox{to minimise} \quad \int_{P_1}^{P_2}\!y\,ds
+\end{align}
+under the constraint
+\begin{align}
+\int_{P_1}^{P_2}\!ds \;=\; l,
+\end{align}
+where both the path integrals are taken along some curve $c$.\, Using a Lagrange multiplier $\lambda$, the task changes to a free problem
+\begin{align}
+\int_{P_1}^{P_2}\!(y\!-\!\lambda)\,ds \;=\; \int_{x_1}^{x_2}(y\!-\!\lambda)\sqrt{1\!+\!y'^2}\,|dx| \;=\; \mbox{min}!
+\end{align}
+(cf. example of calculus of variations).
+
+The \PMlinkname{Euler--Lagrange differential equation}{EulerLagrangeDifferentialEquation}, the necessary condition for (3) to give an extremal $c$, reduces to the Beltrami identity
+$$(y\!-\!\lambda)\sqrt{1\!+\!y'^2}-y'\!\cdot\!(y\!-\!\lambda)\!\cdot\!\frac{y'}{\sqrt{1\!+\!y'^2}} 
+\;\equiv\; \frac{y\!-\!\lambda}{\sqrt{1\!+\!y'^2}} \;=\; a,$$
+where $a$ is a constant of integration.\, After solving this equation for the derivative $y'$ and separation of variables, we get
+$$\pm\frac{dy}{\sqrt{(y\!-\!\lambda)^2\!-\!a^2}} \;=\; \frac{dx}{a}$$
+which may become clearer by notating\, $y\!-\!\lambda := u$;\, then by integrating
+$$\pm\frac{du}{\sqrt{u^2\!-\!a^2}} \;=\; \frac{dx}{a}$$
+we choose the new constant of integration $b$ such that\, $x = b$\, when\, $u = a$:
+$$\pm\int_a^u\frac{du}{\sqrt{u^2\!-\!a^2}} \;=\; \int_b^x\frac{dx}{a}$$
+We can write two \PMlinkname{equivalent}{Equivalent3} results
+$$\ln\frac{u\!+\!\sqrt{u^2\!-\!a^2}}{a} \;=\; +\frac{x\!-\!b}{a}, \qquad 
+  \ln\frac{u\!-\!\sqrt{u^2\!-\!a^2}}{a} \;=\; -\frac{x\!-\!b}{a},$$
+i.e.
+$$\frac{u\!+\!\sqrt{u^2\!-\!a^2}}{a} \;=\; e^{+\frac{x-b}{a}}, \qquad 
+  \frac{u\!-\!\sqrt{u^2\!-\!a^2}}{a} \;=\; e^{-\frac{x-b}{a}}.$$
+Adding these allows to eliminate the square roots and to obtain
+$$u \;=\; \frac{a}{2}\!\left(e^{\frac{x-b}{a}}+e^{-\frac{x-b}{a}}\right),$$
+or
+\begin{align}
+ y\!-\!\lambda \;=\; a\cosh\frac{x\!-\!b}{a}.
+\end{align}
+This is the sought form of the equation of the chain curve.\, The constants $\lambda,\,a,\,b$ can then be determined for putting the curve to pass through the given points $P_1$ and $P_2$.
+
+\begin{thebibliography}{8}
+\bibitem{lindelof}{\sc E. Lindel\"of}: {\em Differentiali- ja integralilasku
+ja sen sovellutukset IV. Johdatus variatiolaskuun}.\, Mercatorin Kirjapaino Osakeyhti\"o, Helsinki (1946).
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}

@@ -1,0 +1,264 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{ProofOfArithmeticgeometricMeansInequalityUsingLagrangeMultipliers}
+\pmcreated{2013-03-22 15:25:53}
+\pmmodified{2013-03-22 15:25:53}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{proof of arithmetic-geometric means inequality using Lagrange multipliers}
+\pmrecord{16}{37278}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Example}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49-00}
+\pmclassification{msc}{26B12}
+%\pmkeywords{Lagrange multiplier}
+%\pmkeywords{arithmetic-geometric means inequality}
+\pmrelated{ArithmeticGeometricMeansInequality}
+\pmrelated{UsingJensensInequalityToProveTheArithmeticGeometricHarmonicMeansInequality}
+
+% this is the default PlanetMath preamble.  as your knowledge
+% of TeX increases, you will probably want to edit this, but
+% it should be fine as is for beginners.
+
+% almost certainly you want these
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% used for TeXing text within eps files
+\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% for neatly defining theorems and propositions
+%\usepackage{amsthm}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% there are many more packages, add them here as you need them
+\usepackage{enumerate}
+
+% define commands here
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\rat}{\mathbb{Q}}
+\newcommand{\nat}{\mathbb{N}}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\normW}[1]{\left\lVert#1\right\rVert}
+\providecommand{\normB}[1]{\Bigl\lVert#1\Bigr\rVert}
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+\DeclareMathOperator{\D}{D}
+\begin{document}
+As an interesting example of the Lagrange multiplier method,
+we employ it to prove the arithmetic-geometric means inequality:
+\[
+\sqrt[n]{x_1 \dotsm x_n} \leq \frac{x_1 + \dotsb + x_n}{n}\,, \quad x_i \geq 0\,,
+\]
+with equality if and only if all the $x_i$ are equal.
+
+To begin with, define $f\colon \real_{\geq 0}^n \to \real_{\geq 0}$ by $f(x) = (x_1 \dotsm x_n)^{1/n}$.
+
+Fix $a > 0$ (the arithmetic mean),
+and consider the set $M = \{ x \in \real^n : x_i \geq 0 \text{ for all $i$, } \sum_i x_i = na \}$.
+This is clearly a closed and bounded set in $\real^n$, and hence is compact.
+Therefore $f$ on $M$ has both a maximum and minimum.
+
+$M$ is almost a manifold (a differentiable surface), except that it has a boundary consisting
+of points with $x_i = 0$ for some $i$.
+Clearly $f$ attains the minimum zero on this boundary,
+and on the ``interior'' of $M$,
+that is $M' = \{ x \in \real^n : x_i > 0 \text{ for all $i$, } \sum_i x_i = na \}$,
+$f$ is positive. Now $M'$ is a manifold, and the maximum of $f$ on $M$
+is evidently a local maximum on $M'$.  Hence
+the Lagrange multiplier method may be applied.
+
+\begin{center}
+\includegraphics[scale=0.75]{agm}
+\end{center}
+
+We have the constraint\footnote{Although $g$ does not constrain that $x_i > 0$,
+this does not really matter --- for those who are worried about such
+things, a rigorous way to escape this annoyance is to simply
+define $f(x) = 0$ to be zero whenever $x_i \leq 0$ for some $i$.
+Clearly the new $f$ cannot have a maximum at such points,
+so we may simply ignore the points with $x_i \leq 0$ when solving the system.
+And for the same reason, the fact that $f$ fails to be differentiable at the boundary
+points is immaterial.} $0 = g(x) = \sum_i x_i - na$
+under which we are to maximize $f$.
+
+We compute:
+\begin{align*}
+\frac{f(x)}{nx_i} = \frac{\partial f}{ \partial x_i} = \lambda \, \frac{\partial g}{\partial x_i} = \lambda\,.
+\end{align*}
+If we take the product, $i = 1, \dotsc, n$, of the extreme left- and right- hand sides of this equation,
+we obtain
+\[
+\frac{1}{n^n} = \frac{f(x)^n}{n^n x_1 \dotsm x_n} = \lambda^n
+\]
+from which it follows that $\lambda = 1/n$ ($\lambda = -1/n$ is obviously inadmissible).
+Then substituting back, we get $f(x) = x_i$, which implies that the $x_i$ are all equal to $a$,
+The value of $f$ at this point is $a$.
+
+Since we have obtained a unique solution to the Lagrange multiplier system,
+this unique solution must be the unique maximum point of $f$ on $M$.
+So $f(x) \leq a$ amongst all numbers $x_i$ whose arithmetic mean is $a$,
+with equality occurring if and only if all the $x_i$ are equal to $a$. 
+
+The case $a = 0$, which was not included in the above analysis, is trivial.
+
+%\section*{Another inequality}
+%The expression $f(x)/x_i$ that had appeared looks suspiciously like the derivative of the logarithm.  In fact, there is a problem in information theory that can be solved by applying Lagrange multipliers to the exact same set $M$, with $a = 1/n$:
+%
+%The uniform probability distribution
+%maximizes the \PMlinkname{entropy}{ShannonsTheoremEntropy}
+%among all discrete probability distributions $\{ x_i \}$ on $n$ points.
+%
+%Here we are to maximize the entropy function $h(x) = -\sum_i x_i \log x_i$.
+%(On the boundary of $M$, $h$ is zero; on the interior of $M$, $h$ is positive.)  
+%Applying Lagrange multipliers again,
+%we have
+%\[
+%- \log (x_i) - 1= \frac{\partial h}{\partial x_i} = \lambda \frac{\partial g}{\partial x_i} = \lambda\,,
+%\]
+%and it follows that $x_i = e^{-\lambda - 1} = 1/n$ gives the unique maximum point of $h$.
+
+\section*{Proof of concavity}
+The question of whether the point obtained from solving Lagrange system
+is actually a maximum for $f$ was taken care of by our preliminary compactness argument. Another popular way to determine whether a given stationary point
+is a local maximum or minimum is by studying the Hessian of the function
+at that point.
+For the sake of illustrating the relevant techniques,
+we will prove again that $x_i = a$ is a local maximum for $f$,
+this time by showing that the Hessian is negative definite.
+
+Actually, it turns out to be not much
+harder to show that $f$ is weakly concave \emph{everywhere}
+on $\real_{\geq 0}^n$, not just on $M$.
+A plausibility argument for this fact
+is that the graph of $t \mapsto \sqrt[n]{t}$
+is concave, and since $f$ also involves an $n$th root,
+it should be concave too.  We will prove concavity of $f$ by
+showing that the Hessian of $f$ is negative semi-definite.
+
+Since $M$ is a \emph{convex}\footnote{
+If $M$ is not convex, then the arguments that follow will not work.
+In general, a prescription to determine whether a critical point
+is a local minimum or maximum can be found
+in tests for local extrema in Lagrange multiplier method.} set, the restriction
+of $f$ to $M$ will also be weakly concave;
+then we can conclude that
+the critical point $x_i = a$ on $M$
+must be a \emph{global} minimum on $M$.
+
+We begin by calculating second-order derivatives:
+\begin{align*}
+\frac{\partial^2 f}{\partial x_j \partial x_i} &= \frac{\partial}{\partial x_j} \left( \frac{f(x)}{nx_i} \right) 
+=
+\frac{1}{nx_i} \frac{\partial f}{\partial x_j} + f(x) \frac{\partial}{\partial x_j} \frac{1}{nx_i} \\
+&= \frac{f(x)}{n^2 x_i x_j} - \delta_{ij} \frac{f(x)}{n x_i^2}\,.
+\end{align*}
+(The symbol $\delta_{ij}$ is the Kronecker delta.)
+Thus the Hessian matrix is:
+\begin{align*}
+\D^2 f(x) = \frac{f(x)}{n^2} \left[ \frac{1}{x_i x_j} \right]_{ij} - \frac{f(x)}{n^2} 
+\begin{bmatrix}
+\frac{n}{x_1^2} \\
+& \ddots \\
+& & \frac{n}{x_n^2}
+\end{bmatrix}
+\end{align*}
+Now if we had actual numbers to substitute for the $x_i$,
+then we can go to a computer and ask if the matrix is negative definite or not.
+But we want to prove global concavity, so we have to employ some clever
+algebra, and work directly from the definition.
+
+Let $v = (v_1, \dotsc, v_n)$ be a test vector.
+Negative semi-definiteness means $v \, \D^2 f(x) \, v^{\mathrm{T}} \leq 0$ for all $v$.
+So let us write out:
+\begin{align*}
+v \D^2 f(x) v^{\mathrm{T}} &= \frac{f(x)}{n^2} \left( \sum_{i,j} \frac{v_i}{x_i} \frac{v_j}{x_j} - n \sum_i \frac{v_i^2}{x_i^2} \right) \\
+&= \frac{f(x)}{n^2} \left( \left( \sum_i \frac{v_i}{x_i} \right)^2 - n \sum_i \left(\frac{v_i}{x_i}\right)^2 \right)\,.
+\end{align*}
+We would be done if we can prove
+\begin{equation}\label{cauchy}
+\left( \sum_i w_i \right)^2 \leq n \sum_i w_i^2\,, \quad w_i = \frac{v_i}{x_i}\,.
+\end{equation}
+But look, this is just the Cauchy-Schwarz inequality,
+concerning the dot product of the vectors $(w_1, \dotsc, w_n)$
+and $(1, \dotsc, 1)$!  
+So $\D^2 f(x)$ is negative semi-definite everywhere,
+i.e. $f$ is weakly concave.
+
+Moreover, the case of equality in the Cauchy-Schwarz inequality \eqref{cauchy}
+only occurs when $(w_1, \dotsc, w_n)$ is parallel to $(1, \dotsc, 1)$,
+i.e. $v_i = \mu x_i$ for some scalar $\mu$.
+Notice that $(1, \dotsc, 1)$ is the normal vector to
+the tangent space of $M$,
+so $(1, \dotsc, 1) \cdot v = \mu \sum_i x_i \neq 0$
+unless $\mu = 0$.
+This means, equality never holds in \eqref{cauchy}
+if $v \neq 0$ is \emph{restricted to the tangent space} of $M$.
+In turn, this means that $f$ is \emph{strictly} concave
+on the convex set $M$, and
+so $x_i = a$ is a strict global minimum of $f$ on $M$.
+
+\section*{Proof of inequality by symmetry argument}
+%After analyzing the concavity of $f$ completely,
+%the author cannot resist giving two other proofs
+%of the arithmetic-geometric means inequality,
+%based on concavity arguments only, without using Lagrange multipliers at all.
+%
+%(Actually, techniques based on convexity and concavity are good to know for another reason: 
+%they can be applied for infinite-dimensional optimization, where compactness 
+%arguments may not be readily available.)
+%
+%\paragraph{First proof.} We use the fact that the logarithmic function is concave, and Jensen's inequality
+%for concave functions
+%\[
+%\frac{\log x_1 + \dotsc + \log x_n}{n} \leq \log \left( \frac{x_1 + \dotsc + x_n}{n} \right)
+%\]
+%with equality if and only if the $x_i$ are all equal.
+%Taking exponential of both sides yields the result.
+%
+
+Observe that the maximum point $x_i = a$ is pleasantly symmetric.
+We can show that the solution has to be symmetric,
+by exploiting the symmetry of the function $f$ and the set $M$.
+
+We have already calculated that $f$ is strictly concave on $M$;
+this was independent of the Lagrange multiplier method.
+Since $f$ is strictly concave on a closed convex set,
+it has a unique maximum there; call it $x$.
+
+Pick any indices $i$ and $j$, ranging from $1$ to $n$, and form
+the linear transformation $T$, which switches the $i$th and $j$th coordinates
+of its argument.
+
+By definition, $f(x) \geq f(\xi)$ for all $\xi \in M$.
+But $f \circ T = f$, so this means $f(Tx) \geq f(T\xi)$ for all $\xi \in M$.
+But $M$ is mapped to itself by the transformation $T$,
+so this is the same as saying that $f(Tx) \geq f(\xi)$ for all $\xi \in M$.
+But the global maximum is unique, so $Tx = x$,
+that is, $x_i = x_j$.
+
+Note that the argument in this last proof
+is extremely general --- it takes the form:
+if $x$ is the unique maximum of $f \colon M \to \real$,
+and $T$ is any symmetry of $M$ such that $f \circ T = f$,
+then $Tx = x$.  This kind of symmetry argument was used to great effect
+by Jakob Steiner in his famous attempted proof of the isoperimetric inequality:
+among all closed curves of a given arc length, the circle maximizes
+the area enclosed.  However, Steiner did not realize that
+the assumption that there is a unique maximizing curve
+has to be proved.  Actually, that is the hardest part of the proof ---
+if the assumption is known, then one may easily calculate using the \emph{Lagrange multiplier method}
+that the maximizing curve must be a circle!
+
+%%%%%
+%%%%%
+\end{document}

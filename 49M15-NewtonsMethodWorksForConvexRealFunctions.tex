@@ -1,0 +1,209 @@
+\documentclass[12pt]{article}
+\usepackage{pmmeta}
+\pmcanonicalname{NewtonsMethodWorksForConvexRealFunctions}
+\pmcreated{2013-03-22 15:41:28}
+\pmmodified{2013-03-22 15:41:28}
+\pmowner{stevecheng}{10074}
+\pmmodifier{stevecheng}{10074}
+\pmtitle{Newton's method works for convex real functions}
+\pmrecord{7}{37634}
+\pmprivacy{1}
+\pmauthor{stevecheng}{10074}
+\pmtype{Theorem}
+\pmcomment{trigger rebuild}
+\pmclassification{msc}{49M15}
+\pmclassification{msc}{65H05}
+\pmclassification{msc}{26A06}
+\pmsynonym{Newton's method works for concave real functions}{NewtonsMethodWorksForConvexRealFunctions}
+%\pmkeywords{Newton's method}
+%\pmkeywords{Newton-Raphson method}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% used for TeXing text within eps files
+%\usepackage{psfrag}
+% need this for including graphics (\includegraphics)
+\usepackage{graphicx}
+% making logically defined graphics
+%%%\usepackage{xypic}
+
+% define commands here
+\newcommand{\real}{\mathbb{R}}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\absW}[1]{\left\lvert#1\right\rvert}
+\providecommand{\absB}[1]{\Bigl\lvert#1\Bigr\rvert}
+\providecommand{\defnterm}[1]{\emph{#1}}
+
+\newtheorem{thm}{Theorem}
+\begin{document}
+\PMlinkescapeword{argument}
+\PMlinkescapeword{simple}
+
+\begin{thm}
+\label{thm:main}
+Let $f\colon I \to \real$ be a convex differentiable function
+on an interval $I \subseteq \real$, with at least one root.
+Then the following sequence $\{ x_n \}$
+obtained from Newton's method,
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\,,
+\]
+will converge to a root of $f$, provided that
+$f'(x_0) \neq 0$ and $x_1 \in I$ for the given starting point $x_0 \in I$.
+\end{thm}
+
+Obviously, ``convex'' can be replaced by ``concave'' in Theorem \ref{thm:main}.
+
+The proof will proceed in several steps.  First, a simple converse result:
+
+\begin{thm}
+\label{thm:converse}
+Let $f\colon I \to \real$ be a differentiable convex function,
+and $\{x_n\}$ be the sequence in Theorem \ref{thm:main}.
+If it is convergent to a number $a \in I$,
+then $a$ is necessarily a root of $f$.
+
+\begin{proof}
+We have
+\[
+0 = \lim_{n \to \infty} f'(x_n) \cdot (x_n - x_{n+1}) = 
+\lim_{n \to \infty} f(x_n) = f(a)\,.
+\]
+(The first limit is zero by local boundedness of $f'$ at $a$,
+which follows from $f'$ being finite and monotone\footnote{
+Actually, a differentiable convex function must necessarily have a continuous derivative,
+for the derivative is increasing, and it cannot have any jump discontinuities by 
+\PMlinkname{Darboux's Theorem}{DarbouxsTheorem}.}.)
+\end{proof}
+\end{thm}
+
+\section*{Proof of Theorem \ref{thm:main}}
+
+\subsection*{Case A: when $I = \real$, $f' > 0$, and $f(x_0) \geq 0$}
+We claim that whenever $f(x_n) \geq 0$, then $f(x_{n+1}) \geq 0$ too.
+Recall that the graph of a convex function $f$ always lies 
+above any of its tangent lines.
+So in particular, the point $(x_{n+1}, f(x_{n+1}))$ is higher than the point
+$(x_{n+1}, 0)$, which is on the tangent line by definition.
+By induction, we have $f(x_n) \geq 0$ for all $n$.
+
+We also have $x_{n+1} \leq x_n$ for all $n$.
+By hypothesis the slope $f'(x_n)$ of the tangent line is positive, 
+and $(x_n, f(x_n))$ lies above the horizontal axis.
+Then the intersection point of the tangent line and the horizontal axis,
+which is $(x_{n+1}, 0)$, must be to the left of $(x_n, 0)$.
+
+So the sequence $\{ x_n \}$ is decreasing.  It converges to a real number or
+diverges to $-\infty$.  
+If the limit is a real number, by Theorem \ref{thm:converse} that number
+is a root of $f$, and we are done.
+
+If the limit is $-\infty$, then we must have $f(x_n) > 0$
+for all $x_n$. Hence $f(x) > 0$ for all $x$, as $f$ is monotone
+and $x_n$ can be arbitrarily large negative.
+In other words, $f$ has no root to begin with.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{convex-newton.1.eps}
+\end{center}
+\caption{Case A: $\{ x_n \}$ is monotonically decreasing}
+\end{figure}
+
+\subsection*{Case B: when $I = \real$, $f' < 0$, and $f(x_0) \geq 0$}
+This situation is the (left-right) mirror of Case A, 
+except that because the slope of the curve is negative,
+the sequence $\{ x_n \}$ is increasing this time.  We still have $x_n \geq 0$,
+so the sequence either converges to a root of $f$, or diverges to $+\infty$ (in which case $f$ has no root). 
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{convex-newton.2.eps}
+\end{center}
+\caption{Case B: $\{ x_n \}$ is monotonically increasing}
+\end{figure}
+
+\subsection*{Case C: when $I = \real$, $f'(x_0) > 0$, and $f(x_0) \geq 0$}
+To begin, note that the first part of Case A, asserting that $f(x_n) \geq 0$
+for all $n$, still goes through only assuming $f'(x_n) \neq 0$
+--- in which case the sequence would not be defined after the point $x_n$.
+We show that, in fact, $f'(x_n) > 0$ for all $n$,
+so the rest of Case A goes through. 
+
+Suppose $n$ is the smallest integer
+for which $f'(x_{n+1}) \leq 0$.  
+Also assume $f(x_n), f(x_{n+1}) \neq 0$, otherwise we would be done anyway.
+The reasoning in Case A shows $x_{n+1} < x_n$.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{convex-newton.3.eps}
+\end{center}
+\caption{Case C: a tangent line separates $f$ from the horizontal axis}
+\end{figure}
+
+The function $f$ is strictly positive on $[x_{n+1}, x_n]$,
+for the graph of $f$ lies above the tangent line segment extending
+from $(x_{n+1}, 0)$ to $(x_n, f(x_n))$, which in turn lies 
+strictly above the horizontal axis.
+Since $f$ is decreasing to the left of $[x_{n+1}, x_n]$
+and increasing to the right, 
+$f$ never touches the horizontal axis anywhere.
+This contradicts our hypothesis that $f$ has roots.
+
+\subsection*{Case D: when $I = \real$, $f'(x_0) < 0$, and $f(x_0) \geq 0$}
+This situation is the (left-right) mirror 
+of Case C.  The same argument shows that $f'(x_n) < 0$
+for all $n$ (or $f(x_n) = 0$ for some $n$), and the
+argument of Case B applies.
+
+\subsection*{Case E: for general intervals $I$}
+The only concern is that the iteration $\{ x_n \}$
+might go outside the interval $I$.  We show that it does not.
+
+Suppose $f(x_0) \geq 0$.
+Then as we have proved, $f(x_n) \geq 0$ for all $n$.
+Suppose $x_n \in I$ but $x_{n+1} \notin I$.
+Then $f$ has no root, because the graph of $f$ lies above
+the tangent line from $(x_n, f(x_n))$ to $(x_{n+1}, 0)$
+which lies above the horizontal axis.
+
+The \emph{limit} of $x_n$ could conceivably go just outside
+the interval $I$.
+But this case is similar to the case $x_n \to \pm \infty$
+already considered in Case A:
+$f$ possesses no root then.
+
+
+Finally, suppose $f(x_0) < 0$, the case we have ignored all along.
+Our hypotheses assume that $f(x_1)$ is defined.
+We immediately have $f(x_1) \geq 0$, 
+since the graph of $f$ lies above the tangent line
+from $(x_0, f(x_0))$ to $(x_1, 0)$.
+But this just brings us back to the other cases.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{convex-newton.4.eps}
+\includegraphics{convex-newton.5.eps}
+\end{center}
+\caption{Case E: $f(x_1)$ is always $\geq 0$}
+\end{figure}
+
+\section*{Examples}
+
+Newton's method for finding square roots of positive numbers $\alpha$
+(which reduces to the ancient divide-and-average method) always
+converges, for the target function $f(x) = x^2 - \alpha$ is convex.
+
+\begin{thebibliography}{3}
+\bibitem{Spivak}
+Michael Spivak. {\it Calculus}, third edition. Publish or Perish, 1994.
+\end{thebibliography}
+%%%%%
+%%%%%
+\end{document}
