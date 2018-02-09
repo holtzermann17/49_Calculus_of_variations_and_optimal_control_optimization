@@ -1,0 +1,306 @@
+<!DOCTYPE html><html>
+<head>
+<title>Newton’s method works for convex real functions</title>
+<!--Generated on Fri Feb  9 21:48:58 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">Newton’s method works for convex real functions</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+</div>
+<div id="Thmthm1" class="ltx_theorem ltx_theorem_thm">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Theorem 1</span>.</h6>
+<div id="Thmthm1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="Thmthm1.p1.m1" class="ltx_Math" alttext="f\colon I\to\mathbb{R}" display="inline"><mrow><mi>f</mi><mo mathvariant="normal">:</mo><mrow><mi>I</mi><mo mathvariant="normal">→</mo><mi mathvariant="normal">R</mi></mrow></mrow></math> be a convex differentiable function
+on an interval <math id="Thmthm1.p1.m2" class="ltx_Math" alttext="I\subseteq\mathbb{R}" display="inline"><mrow><mi>I</mi><mo mathvariant="normal">⊆</mo><mi mathvariant="normal">R</mi></mrow></math>, with at least one root.
+Then the following sequence <math id="Thmthm1.p1.m3" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo mathvariant="normal" stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo mathvariant="normal" stretchy="false">}</mo></mrow></math>
+obtained from Newton’s method,</span></p>
+<table id="S0.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex1.m1" class="ltx_Math" alttext="x_{n+1}=x_{n}-\frac{f(x_{n})}{f^{\prime}(x_{n})}\,," display="block"><mrow><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>-</mo><mpadded width="+1.7pt"><mfrac><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mfrac></mpadded></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">will converge to a root of <math id="Thmthm1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, provided that
+<math id="Thmthm1.p1.m5" class="ltx_Math" alttext="f^{\prime}(x_{0})\neq 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo mathvariant="normal">′</mo></msup><mo mathvariant="italic">⁢</mo><mrow><mo mathvariant="normal" stretchy="false">(</mo><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal" stretchy="false">)</mo></mrow></mrow><mo mathvariant="normal">≠</mo><mn mathvariant="normal">0</mn></mrow></math> and <math id="Thmthm1.p1.m6" class="ltx_Math" alttext="x_{1}\in I" display="inline"><mrow><msub><mi>x</mi><mn mathvariant="normal">1</mn></msub><mo mathvariant="normal">∈</mo><mi>I</mi></mrow></math> for the given starting point <math id="Thmthm1.p1.m7" class="ltx_Math" alttext="x_{0}\in I" display="inline"><mrow><msub><mi>x</mi><mn mathvariant="normal">0</mn></msub><mo mathvariant="normal">∈</mo><mi>I</mi></mrow></math>.</span></p>
+</div>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Obviously, “convex” can be replaced by “concave” in Theorem <a href="#Thmthm1" title="Theorem 1. ‣ Newton’s method works for convex real functions" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">The proof will proceed in several steps. First, a simple converse result:</p>
+</div>
+<div id="Thmthm2" class="ltx_theorem ltx_theorem_thm">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<span class="ltx_tag ltx_tag_theorem">Theorem 2</span>.</h6>
+<div id="Thmthm2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="Thmthm2.p1.m1" class="ltx_Math" alttext="f\colon I\to\mathbb{R}" display="inline"><mrow><mi>f</mi><mo mathvariant="normal">:</mo><mrow><mi>I</mi><mo mathvariant="normal">→</mo><mi mathvariant="normal">R</mi></mrow></mrow></math> be a differentiable convex function,
+and <math id="Thmthm2.p1.m2" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo mathvariant="normal" stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo mathvariant="normal" stretchy="false">}</mo></mrow></math> be the sequence in Theorem <a href="#Thmthm1" title="Theorem 1. ‣ Newton’s method works for convex real functions" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>.
+If it is convergent to a number <math id="Thmthm2.p1.m3" class="ltx_Math" alttext="a\in I" display="inline"><mrow><mi>a</mi><mo mathvariant="normal">∈</mo><mi>I</mi></mrow></math>,
+then <math id="Thmthm2.p1.m4" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> is necessarily a root of <math id="Thmthm2.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</span></p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="Thmthm2.p2" class="ltx_para">
+<p class="ltx_p">We have</p>
+<table id="S0.Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex2.m1" class="ltx_Math" alttext="0=\lim_{n\to\infty}f^{\prime}(x_{n})\cdot(x_{n}-x_{n+1})=\lim_{n\to\infty}f(x_%
+{n})=f(a)\,." display="block"><mrow><mrow><mn>0</mn><mo>=</mo><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mo>⁡</mo><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>⋅</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>-</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mo>⁡</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">(The first limit is zero by local boundedness of <math id="Thmthm2.p2.m1" class="ltx_Math" alttext="f^{\prime}" display="inline"><msup><mi>f</mi><mo>′</mo></msup></math> at <math id="Thmthm2.p2.m2" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>,
+which follows from <math id="Thmthm2.p2.m3" class="ltx_Math" alttext="f^{\prime}" display="inline"><msup><mi>f</mi><mo>′</mo></msup></math> being finite and monotone<span class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
+Actually, a differentiable convex function must necessarily have a continuous derivative,
+for the derivative is increasing, and it cannot have any jump discontinuities by
+Darboux’s Theorem (<span class="ltx_text ltx_font_typewriter">http://planetmath.org/DarbouxsTheorem</span>).</span></span></span>.)
+∎</p>
+</div>
+</div>
+</div>
+<section id="Sx1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">Proof of Theorem <a href="#Thmthm1" title="Theorem 1. ‣ Newton’s method works for convex real functions" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>
+</h2>
+
+<section id="Sx1.SSx1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case A: when <math id="Sx1.SSx1.m1" class="ltx_Math" alttext="I=\mathbb{R}" display="inline"><mrow><mi>I</mi><mo>=</mo><mi>ℝ</mi></mrow></math>, <math id="Sx1.SSx1.m2" class="ltx_Math" alttext="f^{\prime}&gt;0" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>&gt;</mo><mn>0</mn></mrow></math>, and <math id="Sx1.SSx1.m3" class="ltx_Math" alttext="f(x_{0})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>
+</h3>
+
+<div id="Sx1.SSx1.p1" class="ltx_para">
+<p class="ltx_p">We claim that whenever <math id="Sx1.SSx1.p1.m1" class="ltx_Math" alttext="f(x_{n})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>, then <math id="Sx1.SSx1.p1.m2" class="ltx_Math" alttext="f(x_{n+1})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math> too.
+Recall that the graph of a convex function <math id="Sx1.SSx1.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> always lies
+above any of its tangent lines.
+So in particular, the point <math id="Sx1.SSx1.p1.m4" class="ltx_Math" alttext="(x_{n+1},f(x_{n+1}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> is higher than the point
+<math id="Sx1.SSx1.p1.m5" class="ltx_Math" alttext="(x_{n+1},0)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>, which is on the tangent line by definition.
+By induction, we have <math id="Sx1.SSx1.p1.m6" class="ltx_Math" alttext="f(x_{n})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math> for all <math id="Sx1.SSx1.p1.m7" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>.</p>
+</div>
+<div id="Sx1.SSx1.p2" class="ltx_para">
+<p class="ltx_p">We also have <math id="Sx1.SSx1.p2.m1" class="ltx_Math" alttext="x_{n+1}\leq x_{n}" display="inline"><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub></mrow></math> for all <math id="Sx1.SSx1.p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>.
+By hypothesis the slope <math id="Sx1.SSx1.p2.m3" class="ltx_Math" alttext="f^{\prime}(x_{n})" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math> of the tangent line is positive,
+and <math id="Sx1.SSx1.p2.m4" class="ltx_Math" alttext="(x_{n},f(x_{n}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> lies above the horizontal axis.
+Then the intersection point of the tangent line and the horizontal axis,
+which is <math id="Sx1.SSx1.p2.m5" class="ltx_Math" alttext="(x_{n+1},0)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>, must be to the left of <math id="Sx1.SSx1.p2.m6" class="ltx_Math" alttext="(x_{n},0)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<div id="Sx1.SSx1.p3" class="ltx_para">
+<p class="ltx_p">So the sequence <math id="Sx1.SSx1.p3.m1" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></math> is decreasing. It converges to a real number or
+diverges to <math id="Sx1.SSx1.p3.m2" class="ltx_Math" alttext="-\infty" display="inline"><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></math>.
+If the limit is a real number, by Theorem <a href="#Thmthm2" title="Theorem 2. ‣ Newton’s method works for convex real functions" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a> that number
+is a root of <math id="Sx1.SSx1.p3.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, and we are done.</p>
+</div>
+<div id="Sx1.SSx1.p4" class="ltx_para">
+<p class="ltx_p">If the limit is <math id="Sx1.SSx1.p4.m1" class="ltx_Math" alttext="-\infty" display="inline"><mrow><mo>-</mo><mi mathvariant="normal">∞</mi></mrow></math>, then we must have <math id="Sx1.SSx1.p4.m2" class="ltx_Math" alttext="f(x_{n})&gt;0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>
+for all <math id="Sx1.SSx1.p4.m3" class="ltx_Math" alttext="x_{n}" display="inline"><msub><mi>x</mi><mi>n</mi></msub></math>. Hence <math id="Sx1.SSx1.p4.m4" class="ltx_Math" alttext="f(x)&gt;0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> for all <math id="Sx1.SSx1.p4.m5" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, as <math id="Sx1.SSx1.p4.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is monotone
+and <math id="Sx1.SSx1.p4.m7" class="ltx_Math" alttext="x_{n}" display="inline"><msub><mi>x</mi><mi>n</mi></msub></math> can be arbitrarily large negative.
+In other words, <math id="Sx1.SSx1.p4.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> has no root to begin with.</p>
+</div>
+<figure id="Sx1.F1" class="ltx_figure"><img src="convex-newton.1.eps" id="Sx1.F1.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 1: </span>Case A: <math id="Sx1.F1.m2" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></math> is monotonically decreasing</figcaption>
+</figure>
+</section>
+<section id="Sx1.SSx2" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case B: when <math id="Sx1.SSx2.m1" class="ltx_Math" alttext="I=\mathbb{R}" display="inline"><mrow><mi>I</mi><mo>=</mo><mi>ℝ</mi></mrow></math>, <math id="Sx1.SSx2.m2" class="ltx_Math" alttext="f^{\prime}&lt;0" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>&lt;</mo><mn>0</mn></mrow></math>, and <math id="Sx1.SSx2.m3" class="ltx_Math" alttext="f(x_{0})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>
+</h3>
+
+<div id="Sx1.SSx2.p1" class="ltx_para">
+<p class="ltx_p">This situation is the (left-right) mirror of Case A,
+except that because the slope of the curve is negative,
+the sequence <math id="Sx1.SSx2.p1.m1" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></math> is increasing this time. We still have <math id="Sx1.SSx2.p1.m2" class="ltx_Math" alttext="x_{n}\geq 0" display="inline"><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>≥</mo><mn>0</mn></mrow></math>,
+so the sequence either converges to a root of <math id="Sx1.SSx2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, or diverges to <math id="Sx1.SSx2.p1.m4" class="ltx_Math" alttext="+\infty" display="inline"><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></math> (in which case <math id="Sx1.SSx2.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> has no root).</p>
+</div>
+<figure id="Sx1.F2" class="ltx_figure"><img src="convex-newton.2.eps" id="Sx1.F2.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 2: </span>Case B: <math id="Sx1.F2.m2" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></math> is monotonically increasing</figcaption>
+</figure>
+</section>
+<section id="Sx1.SSx3" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case C: when <math id="Sx1.SSx3.m1" class="ltx_Math" alttext="I=\mathbb{R}" display="inline"><mrow><mi>I</mi><mo>=</mo><mi>ℝ</mi></mrow></math>, <math id="Sx1.SSx3.m2" class="ltx_Math" alttext="f^{\prime}(x_{0})&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, and <math id="Sx1.SSx3.m3" class="ltx_Math" alttext="f(x_{0})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>
+</h3>
+
+<div id="Sx1.SSx3.p1" class="ltx_para">
+<p class="ltx_p">To begin, note that the first part of Case A, asserting that <math id="Sx1.SSx3.p1.m1" class="ltx_Math" alttext="f(x_{n})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>
+for all <math id="Sx1.SSx3.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, still goes through only assuming <math id="Sx1.SSx3.p1.m3" class="ltx_Math" alttext="f^{\prime}(x_{n})\neq 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow></math>
+— in which case the sequence would not be defined after the point <math id="Sx1.SSx3.p1.m4" class="ltx_Math" alttext="x_{n}" display="inline"><msub><mi>x</mi><mi>n</mi></msub></math>.
+We show that, in fact, <math id="Sx1.SSx3.p1.m5" class="ltx_Math" alttext="f^{\prime}(x_{n})&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> for all <math id="Sx1.SSx3.p1.m6" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>,
+so the rest of Case A goes through.</p>
+</div>
+<div id="Sx1.SSx3.p2" class="ltx_para">
+<p class="ltx_p">Suppose <math id="Sx1.SSx3.p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> is the smallest integer
+for which <math id="Sx1.SSx3.p2.m2" class="ltx_Math" alttext="f^{\prime}(x_{n+1})\leq 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mn>0</mn></mrow></math>.
+Also assume <math id="Sx1.SSx3.p2.m3" class="ltx_Math" alttext="f(x_{n}),f(x_{n+1})\neq 0" display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>≠</mo><mn>0</mn></mrow></math>, otherwise we would be done anyway.
+The reasoning in Case A shows <math id="Sx1.SSx3.p2.m4" class="ltx_Math" alttext="x_{n+1}&lt;x_{n}" display="inline"><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>&lt;</mo><msub><mi>x</mi><mi>n</mi></msub></mrow></math>.</p>
+</div>
+<figure id="Sx1.F3" class="ltx_figure"><img src="convex-newton.3.eps" id="Sx1.F3.g1" class="ltx_graphics ltx_centering" alt="">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 3: </span>Case C: a tangent line separates <math id="Sx1.F3.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> from the horizontal axis</figcaption>
+</figure>
+<div id="Sx1.SSx3.p3" class="ltx_para">
+<p class="ltx_p">The function <math id="Sx1.SSx3.p3.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is strictly positive on <math id="Sx1.SSx3.p3.m2" class="ltx_Math" alttext="[x_{n+1},x_{n}]" display="inline"><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">]</mo></mrow></math>,
+for the graph of <math id="Sx1.SSx3.p3.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> lies above the tangent line segment extending
+from <math id="Sx1.SSx3.p3.m4" class="ltx_Math" alttext="(x_{n+1},0)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math> to <math id="Sx1.SSx3.p3.m5" class="ltx_Math" alttext="(x_{n},f(x_{n}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>, which in turn lies
+strictly above the horizontal axis.
+Since <math id="Sx1.SSx3.p3.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> is decreasing to the left of <math id="Sx1.SSx3.p3.m7" class="ltx_Math" alttext="[x_{n+1},x_{n}]" display="inline"><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">]</mo></mrow></math>
+and increasing to the right,
+<math id="Sx1.SSx3.p3.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> never touches the horizontal axis anywhere.
+This contradicts our hypothesis that <math id="Sx1.SSx3.p3.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> has roots.</p>
+</div>
+</section>
+<section id="Sx1.SSx4" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case D: when <math id="Sx1.SSx4.m1" class="ltx_Math" alttext="I=\mathbb{R}" display="inline"><mrow><mi>I</mi><mo>=</mo><mi>ℝ</mi></mrow></math>, <math id="Sx1.SSx4.m2" class="ltx_Math" alttext="f^{\prime}(x_{0})&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>, and <math id="Sx1.SSx4.m3" class="ltx_Math" alttext="f(x_{0})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>
+</h3>
+
+<div id="Sx1.SSx4.p1" class="ltx_para">
+<p class="ltx_p">This situation is the (left-right) mirror
+of Case C. The same argument shows that <math id="Sx1.SSx4.p1.m1" class="ltx_Math" alttext="f^{\prime}(x_{n})&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>
+for all <math id="Sx1.SSx4.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> (or <math id="Sx1.SSx4.p1.m3" class="ltx_Math" alttext="f(x_{n})=0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> for some <math id="Sx1.SSx4.p1.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>), and the
+argument of Case B applies.</p>
+</div>
+</section>
+<section id="Sx1.SSx5" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">Case E: for general intervals <math id="Sx1.SSx5.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>
+</h3>
+
+<div id="Sx1.SSx5.p1" class="ltx_para">
+<p class="ltx_p">The only concern is that the iteration <math id="Sx1.SSx5.p1.m1" class="ltx_Math" alttext="\{x_{n}\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></math>
+might go outside the interval <math id="Sx1.SSx5.p1.m2" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>. We show that it does not.</p>
+</div>
+<div id="Sx1.SSx5.p2" class="ltx_para">
+<p class="ltx_p">Suppose <math id="Sx1.SSx5.p2.m1" class="ltx_Math" alttext="f(x_{0})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>.
+Then as we have proved, <math id="Sx1.SSx5.p2.m2" class="ltx_Math" alttext="f(x_{n})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math> for all <math id="Sx1.SSx5.p2.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>.
+Suppose <math id="Sx1.SSx5.p2.m4" class="ltx_Math" alttext="x_{n}\in I" display="inline"><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>∈</mo><mi>I</mi></mrow></math> but <math id="Sx1.SSx5.p2.m5" class="ltx_Math" alttext="x_{n+1}\notin I" display="inline"><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∉</mo><mi>I</mi></mrow></math>.
+Then <math id="Sx1.SSx5.p2.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> has no root, because the graph of <math id="Sx1.SSx5.p2.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> lies above
+the tangent line from <math id="Sx1.SSx5.p2.m8" class="ltx_Math" alttext="(x_{n},f(x_{n}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> to <math id="Sx1.SSx5.p2.m9" class="ltx_Math" alttext="(x_{n+1},0)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>
+which lies above the horizontal axis.</p>
+</div>
+<div id="Sx1.SSx5.p3" class="ltx_para">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">limit</em> of <math id="Sx1.SSx5.p3.m1" class="ltx_Math" alttext="x_{n}" display="inline"><msub><mi>x</mi><mi>n</mi></msub></math> could conceivably go just outside
+the interval <math id="Sx1.SSx5.p3.m2" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>.
+But this case is similar to the case <math id="Sx1.SSx5.p3.m3" class="ltx_Math" alttext="x_{n}\to\pm\infty" display="inline"><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>→</mo><mrow><mo>±</mo><mi mathvariant="normal">∞</mi></mrow></mrow></math>
+already considered in Case A:
+<math id="Sx1.SSx5.p3.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> possesses no root then.</p>
+</div>
+<div id="Sx1.SSx5.p4" class="ltx_para">
+<p class="ltx_p">Finally, suppose <math id="Sx1.SSx5.p4.m1" class="ltx_Math" alttext="f(x_{0})&lt;0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>, the case we have ignored all along.
+Our hypotheses assume that <math id="Sx1.SSx5.p4.m2" class="ltx_Math" alttext="f(x_{1})" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> is defined.
+We immediately have <math id="Sx1.SSx5.p4.m3" class="ltx_Math" alttext="f(x_{1})\geq 0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mn>0</mn></mrow></math>,
+since the graph of <math id="Sx1.SSx5.p4.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> lies above the tangent line
+from <math id="Sx1.SSx5.p4.m5" class="ltx_Math" alttext="(x_{0},f(x_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> to <math id="Sx1.SSx5.p4.m6" class="ltx_Math" alttext="(x_{1},0)" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math>.
+But this just brings us back to the other cases.</p>
+</div>
+<figure id="Sx1.F4" class="ltx_figure">
+<table style="width:100%;">
+<tr>
+<td class="ltx_subgraphics"><img src="convex-newton.4.eps" id="Sx1.F4.g1" class="ltx_graphics ltx_centering" alt=""></td>
+<td class="ltx_subgraphics"><img src="convex-newton.5.eps" id="Sx1.F4.g2" class="ltx_graphics ltx_centering" alt=""></td>
+</tr>
+</table>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 4: </span>Case E: <math id="Sx1.F4.m3" class="ltx_Math" alttext="f(x_{1})" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> is always <math id="Sx1.F4.m4" class="ltx_Math" alttext="\geq 0" display="inline"><mrow><mi></mi><mo>≥</mo><mn>0</mn></mrow></math></figcaption>
+</figure>
+</section>
+</section>
+<section id="Sx2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">Examples</h2>
+
+<div id="Sx2.p1" class="ltx_para">
+<p class="ltx_p">Newton’s method for finding square roots of positive numbers <math id="Sx2.p1.m1" class="ltx_Math" alttext="\alpha" display="inline"><mi>α</mi></math>
+(which reduces to the ancient divide-and-average method) always
+converges, for the target function <math id="Sx2.p1.m2" class="ltx_Math" alttext="f(x)=x^{2}-\alpha" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mi>α</mi></mrow></mrow></math> is convex.</p>
+</div>
+</section>
+<section id="bib" class="ltx_bibliography">
+<h2 class="ltx_title ltx_title_bibliography">References</h2>
+
+<ul class="ltx_biblist">
+      
+<li id="bib.bib1" class="ltx_bibitem">
+        <span class="ltx_bibtag ltx_role_refnum">1</span>
+        
+<span class="ltx_bibblock">
+Michael Spivak. <span class="ltx_text ltx_font_italic">Calculus</span>, third edition. Publish or Perish, 1994.
+
+</span>
+      </li>
+    
+</ul>
+</section>
+<div id="p4" class="ltx_para ltx_align_right">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_t">Title</th>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">Newton’s method works for convex real functions</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Canonical name</th>
+<td class="ltx_td ltx_align_left ltx_border_r">NewtonsMethodWorksForConvexRealFunctions</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Date of creation</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 15:41:28</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified on</th>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 15:41:28</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Owner</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Last modified by</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Numerical id</th>
+<td class="ltx_td ltx_align_left ltx_border_r">7</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Author</th>
+<td class="ltx_td ltx_align_left ltx_border_r">stevecheng (10074)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Entry type</th>
+<td class="ltx_td ltx_align_left ltx_border_r">Theorem</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 49M15</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 65H05</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l">Classification</th>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 26A06</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l">Synonym</th>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">Newton’s method works for concave real functions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:48:58 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

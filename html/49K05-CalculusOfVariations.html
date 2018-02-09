@@ -1,0 +1,482 @@
+<!DOCTYPE html><html>
+<head>
+<title>calculus of variations</title>
+<!--Generated on Fri Feb  9 21:48:36 2018 by LaTeXML (version 0.8.2) http://dlmf.nist.gov/LaTeXML/.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/3f71ceeb3b055e1ddc3b6c11fb1f074c/raw/2bb23e3b173ff96840797fc0c3bcb8c54085df8e/LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/holtzermann17/4bda0365b30858ac2fb83623185fe3ec/raw/cedd84ed3e3ad597c5d293f443ecfe4803741c6b/ltx-article.css" type="text/css">
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div class="ltx_page_main">
+<div class="ltx_page_content">
+<article class="ltx_document ltx_authors_1line">
+<h1 class="ltx_title ltx_title_document">calculus of variations</h1>
+
+<div id="p1" class="ltx_para">
+<br class="ltx_break">
+<p class="ltx_p">Imagine a bead of mass <math id="p1.m1" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> on a wire whose endpoints are at <math id="p1.m2" class="ltx_Math" alttext="a=(0,0)" display="inline"><mrow><mi>a</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p1.m3" class="ltx_Math" alttext="b=(x_{f},y_{f})" display="inline"><mrow><mi>b</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>f</mi></msub><mo>,</mo><msub><mi>y</mi><mi>f</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math>, with <math id="p1.m4" class="ltx_Math" alttext="y_{f}" display="inline"><msub><mi>y</mi><mi>f</mi></msub></math> lower than the starting position. If gravity acts on the bead with force <math id="p1.m5" class="ltx_Math" alttext="F=mg" display="inline"><mrow><mi>F</mi><mo>=</mo><mrow><mi>m</mi><mo>⁢</mo><mi>g</mi></mrow></mrow></math>, what path (arrangement of the wire) minimizes the bead’s travel time from <math id="p1.m6" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> to <math id="p1.m7" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>, assuming no friction?</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">This is the famed <em class="ltx_emph ltx_font_italic">brachistochrone problem</em>, and its solution was one of the first accomplishments of the calculus of variations. Many minimum problems can be solved using the techniques introduced here.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">In its general form, the calculus of variations concerns quantities</p>
+<table id="S0.E1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E1.m1" class="ltx_Math" alttext="S[q,\dot{q},t]=\int_{a}^{b}L(q(t),\dot{q}(t),t)dt" display="block"><mrow><mrow><mi>S</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1)</span></td>
+</tr>
+</table>
+<p class="ltx_p">for which we wish to find a minimum or a maximum.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">To make this concrete, let’s consider a much simpler problem than the brachistochrone: what’s the shortest distance between two points <math id="p4.m1" class="ltx_Math" alttext="p=(x1,y1)" display="inline"><mrow><mi>p</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math> and <math id="p4.m2" class="ltx_Math" alttext="q=(x2,y2)" display="inline"><mrow><mi>q</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mn>2</mn></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math>? Let the variable <math id="p4.m3" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> represent distance along the path, so that <math id="p4.m4" class="ltx_Math" alttext="\int_{p}^{q}ds=S" display="inline"><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>p</mi><mi>q</mi></msubsup><mrow><mo>𝑑</mo><mi>s</mi></mrow></mrow><mo>=</mo><mi>S</mi></mrow></math>. We wish to find the path such that <math id="p4.m5" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> is a minimum. Zooming in on a small portion of the path, we can see that</p>
+<table id="S0.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E2.m1" class="ltx_Math" alttext="\displaystyle ds^{2}" display="inline"><mrow><mi>d</mi><mo>⁢</mo><msup><mi>s</mi><mn>2</mn></msup></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E2.m2" class="ltx_Math" alttext="\displaystyle=dx^{2}+dy^{2}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>d</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2)</span></td>
+</tr></tbody>
+<tbody id="S0.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E3.m1" class="ltx_Math" alttext="\displaystyle ds" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E3.m2" class="ltx_Math" alttext="\displaystyle=\sqrt{dx^{2}+dy^{2}}" display="inline"><mrow><mi></mi><mo>=</mo><msqrt><mrow><mrow><mi>d</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>d</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></msqrt></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">If we parameterize the path by <math id="p4.m6" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>, then we have</p>
+<table id="S0.E4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E4.m1" class="ltx_Math" alttext="ds=\sqrt{\left(\frac{dx}{dt}\right)^{2}+\left(\frac{dy}{dt}\right)^{2}}\ dt" display="block"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow><mo>=</mo><mrow><mpadded width="+5pt"><msqrt><mrow><msup><mrow><mo>(</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4)</span></td>
+</tr>
+</table>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Let’s assume <math id="p5.m1" class="ltx_Math" alttext="y=f(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, so that we may simplify (4) to</p>
+<table id="S0.E5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E5.m1" class="ltx_Math" alttext="ds=\sqrt{1+\left(\frac{dy}{dx}\right)^{2}}\ dx=\sqrt{1+f^{\prime}(x)^{2}}\ dx." display="block"><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow><mo>=</mo><mrow><mpadded width="+5pt"><msqrt><mrow><mn>1</mn><mo>+</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mpadded width="+5pt"><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mpadded><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5)</span></td>
+</tr>
+</table>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Now we have</p>
+<table id="S0.E6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E6.m1" class="ltx_Math" alttext="S=\int_{p}^{q}L\ dx=\int_{x1}^{x2}\sqrt{1+f^{\prime}(x)^{2}}\ dx" display="block"><mrow><mi>S</mi><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>p</mi><mi>q</mi></msubsup><mrow><mpadded width="+5pt"><mi>L</mi></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mi>x</mi><mo>⁢</mo><mn>1</mn></mrow><mrow><mi>x</mi><mo>⁢</mo><mn>2</mn></mrow></msubsup><mrow><mpadded width="+5pt"><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6)</span></td>
+</tr>
+</table>
+<p class="ltx_p">In this case, <math id="p6.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> is particularly simple. Converting to <math id="p6.m2" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math>’s and <math id="p6.m3" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>’s to make the comparison easier, we have <math id="p6.m4" class="ltx_Math" alttext="L=L[f^{\prime}(x)]=L[\dot{q}(t)]" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math>, not the more general <math id="p6.m5" class="ltx_Math" alttext="L[q(t),\dot{q}(t),t]" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow></math> covered by the calculus of variations. We’ll see later how to use our <math id="p6.m6" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>’s simplicity to our advantage. For now, let’s talk more generally.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">We wish to find the path described by <math id="p7.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math>, passing through a point <math id="p7.m2" class="ltx_Math" alttext="q(a)" display="inline"><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> at <math id="p7.m3" class="ltx_Math" alttext="t=a" display="inline"><mrow><mi>t</mi><mo>=</mo><mi>a</mi></mrow></math> and through <math id="p7.m4" class="ltx_Math" alttext="q(b)" display="inline"><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> at <math id="p7.m5" class="ltx_Math" alttext="t=b" display="inline"><mrow><mi>t</mi><mo>=</mo><mi>b</mi></mrow></math>, for which the quantity <math id="p7.m6" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> is a minimum, for which  in the path produce no first-order change in <math id="p7.m7" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>, which we’ll call a “stationary point.” This is directly analogous to the idea that for a function <math id="p7.m8" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>, the minimum can be found where  <math id="p7.m9" class="ltx_Math" alttext="\delta t" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mi>t</mi></mrow></math> produce no first-order change in <math id="p7.m10" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>. This is where <math id="p7.m11" class="ltx_Math" alttext="f(t+\delta t)\approx f(t)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>; taking a Taylor series expansion of <math id="p7.m12" class="ltx_Math" alttext="f(t)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math> at <math id="p7.m13" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>, we find</p>
+<table id="S0.E7" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E7.m1" class="ltx_Math" alttext="f(t+\delta t)=f(t)+\delta tf^{\prime}(t)+O({\delta t}^{2})=f(t)," display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(7)</span></td>
+</tr>
+</table>
+<p class="ltx_p">with <math id="p7.m14" class="ltx_Math" alttext="f^{\prime}(t):=\frac{d}{d{t}}{f(t)}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Of course, since the whole point is to consider <math id="p7.m15" class="ltx_Math" alttext="\delta t\neq 0" display="inline"><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>t</mi></mrow><mo>≠</mo><mn>0</mn></mrow></math>, once we neglect terms <math id="p7.m16" class="ltx_Math" alttext="O({\delta t}^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><msup><mi>t</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></math> this is just the point where <math id="p7.m17" class="ltx_Math" alttext="f^{\prime}(t)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. This point, call it <math id="p7.m18" class="ltx_Math" alttext="t=t_{0}" display="inline"><mrow><mi>t</mi><mo>=</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></math>, could be a minimum or a maximum, so in the usual calculus of a single variable we’d proceed by taking the second derivative, <math id="p7.m19" class="ltx_Math" alttext="f^{\prime\prime}(t_{0})" display="inline"><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math>, and seeing if it’s positive or negative to see whether the function has a minimum or a maximum at <math id="p7.m20" class="ltx_Math" alttext="t_{0}" display="inline"><msub><mi>t</mi><mn>0</mn></msub></math>, respectively.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">In the calculus of variations, we’re not considering  in <math id="p8.m1" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>—we’re considering  in the <em class="ltx_emph ltx_font_italic">integral</em> of the relatively complicated <em class="ltx_emph ltx_font_italic">function</em> <math id="p8.m2" class="ltx_Math" alttext="L(q,\dot{q},t)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></math>, where <math id="p8.m3" class="ltx_Math" alttext="\dot{q}=\frac{d}{d{t}}{q(t)}" display="inline"><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>=</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Also, <math id="p8.m4" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> is a functional, and we can think of the minimization problem as the discovery of a minimum in <math id="p8.m5" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math>-space as we jiggle the parameters <math id="p8.m6" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math> and <math id="p8.m7" class="ltx_Math" alttext="\dot{q}" display="inline"><mover accent="true"><mi>q</mi><mo>˙</mo></mover></math>.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">For the shortest-distance problem, it’s clear the maximum time doesn’t exist, since for any finite path length <math id="p9.m1" class="ltx_Math" alttext="S_{0}" display="inline"><msub><mi>S</mi><mn>0</mn></msub></math> we (intuitively) can always find a curve for which the path’s length is greater than <math id="p9.m2" class="ltx_Math" alttext="S_{0}" display="inline"><msub><mi>S</mi><mn>0</mn></msub></math>. This is often true, and we’ll assume for this discussion that finding a stationary point means we’ve found a minimum.</p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">Formally, we write the condition that  produce no change in <math id="p10.m1" class="ltx_Math" alttext="S" display="inline"><mi>S</mi></math> as <math id="p10.m2" class="ltx_Math" alttext="\delta S=0" display="inline"><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>S</mi></mrow><mo>=</mo><mn>0</mn></mrow></math>. To make this precise, we simply write</p>
+<table id="S0.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex1" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex1.m1" class="ltx_Math" alttext="\displaystyle\delta S" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mi>S</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex1.m2" class="ltx_Math" alttext="\displaystyle:=S[q+\delta q,\ \dot{q}+\delta\dot{q},\ t]-S[q,\dot{q},t]" display="inline"><mrow><mi></mi><mo>:=</mo><mrow><mrow><mi>S</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mi>q</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow><mo rspace="7.5pt">,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mrow><mo rspace="7.5pt">,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow><mo>-</mo><mrow><mi>S</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex2" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex2.m2" class="ltx_Math" alttext="\displaystyle=\int_{a}^{b}L(q+\delta q,\ \dot{q}+\delta\dot{q})dt-S[q,\dot{q},t]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>q</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow><mo rspace="7.5pt">,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>-</mo><mrow><mi>S</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">How are we to simplify this mess? We are considering  to the path, which suggests a Taylor series expansion of <math id="p10.m3" class="ltx_Math" alttext="L(q+\delta q,\dot{q}+\delta\dot{q})" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>q</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow><mo>,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> about <math id="p10.m4" class="ltx_Math" alttext="(q,\dot{q})" display="inline"><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></math>:</p>
+<table id="S0.Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex4.m1" class="ltx_Math" alttext="L(q+\delta q,\dot{q}+\delta\dot{q})=L(q,\dot{q})+\delta q\frac{\partial}{%
+\partial{q}}L(q,\dot{q})+\delta\dot{q}\frac{\partial}{\partial{\dot{q}}}L(q,%
+\dot{q})+O(\delta q^{2})+O(\delta\dot{q}^{2})" display="block"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>q</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow><mo>,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><msup><mi>q</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>δ</mi><mo>⁢</mo><msup><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and since we make little error by discarding higher-order terms in <math id="p10.m5" class="ltx_Math" alttext="\delta q" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></math> and <math id="p10.m6" class="ltx_Math" alttext="\delta\dot{q}" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></math>, we have</p>
+<table id="S0.Ex5" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.Ex5.m1" class="ltx_Math" alttext="\int_{a}^{b}L(q+\delta q,\dot{q}+\delta\dot{q})dt=S[q,\dot{q},t]+\int_{a}^{b}%
+\delta q\frac{\partial}{\partial{q}}L(q,\dot{q})+\delta\dot{q}\frac{\partial}{%
+\partial{\dot{q}}}L(q,\dot{q})dt" display="block"><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>q</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow><mo>,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>S</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow><mo>+</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Keeping in mind that <math id="p10.m7" class="ltx_Math" alttext="\delta\dot{q}=\frac{d}{d{t}}{\delta q}" display="inline"><mrow><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow><mo>=</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow></math> and noting that</p>
+<table id="S0.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex6" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex6.m1" class="ltx_Math" alttext="\displaystyle\frac{d}{d{t}}{\left(\delta q\frac{\partial}{\partial{\dot{q}}}L(%
+q,\dot{q})\right)}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex6.m2" class="ltx_Math" alttext="\displaystyle=\delta q\frac{d}{d{t}}{\frac{\partial}{\partial{\dot{q}}}L(q,%
+\dot{q})}+\delta\dot{q}\frac{\partial}{\partial{\dot{q}}}L(q,\dot{q})," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">a simple application of the product rule <math id="p10.m8" class="ltx_Math" alttext="\frac{d}{d{t}}{(fg)}=\dot{f}g+f\dot{g}" display="inline"><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>f</mi><mo>⁢</mo><mi>g</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mover accent="true"><mi>f</mi><mo>˙</mo></mover><mo>⁢</mo><mi>g</mi></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mover accent="true"><mi>g</mi><mo>˙</mo></mover></mrow></mrow></mrow></math> which allows us to substitute</p>
+<table id="S0.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex8" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex8.m1" class="ltx_Math" alttext="\displaystyle\delta\dot{q}\frac{\partial}{\partial{\dot{q}}}L(q,\dot{q})" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex8.m2" class="ltx_Math" alttext="\displaystyle=\frac{d}{d{t}}{\left(\delta q\frac{\partial}{\partial{\dot{q}}}L%
+(q,\dot{q})\right)}-\delta q\frac{d}{d{t}}{\frac{\partial}{\partial{\dot{q}}}L%
+(q,\dot{q})}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>-</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">we can rewrite the integral, shortening <math id="p10.m9" class="ltx_Math" alttext="L(q,\dot{q})" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo stretchy="false">)</mo></mrow></mrow></math> to <math id="p10.m10" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> for convenience, as:</p>
+<table id="S0.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex9" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex9.m1" class="ltx_Math" alttext="\displaystyle\int_{a}^{b}\delta q\frac{\partial}{\partial{q}}L+\delta\dot{q}%
+\frac{\partial}{\partial{\dot{q}}}Ldt" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex9.m2" class="ltx_Math" alttext="\displaystyle=\int_{a}^{b}\delta q\frac{\partial}{\partial{q}}L-\delta q\frac{%
+d}{d{t}}{\frac{\partial}{\partial{\dot{q}}}L}+\frac{d}{d{t}}{\left(\delta q%
+\frac{\partial}{\partial{\dot{q}}}L\right)}dt" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>-</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow><mo>)</mo></mrow><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex10" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex10.m2" class="ltx_Math" alttext="\displaystyle=\int_{a}^{b}\delta q\left[\frac{\partial}{\partial{q}}L-\frac{d}%
+{d{t}}{\frac{\partial}{\partial{\dot{q}}}L}\right]dt+\delta q\frac{\partial}{%
+\partial{\dot{q}}}L\Big{|}_{a}^{b}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow><mo>-</mo><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>]</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>+</mo><msubsup><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow><mo fence="true" maxsize="160%" minsize="160%">|</mo></mrow><mi>a</mi><mi>b</mi></msubsup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Substituting all of this progressively back into our original expression for <math id="p10.m11" class="ltx_Math" alttext="\delta S" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mi>S</mi></mrow></math>, we obtain</p>
+<table id="S0.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tr id="S0.Ex12" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.Ex12.m1" class="ltx_Math" alttext="\displaystyle\delta S" display="inline"><mrow><mi>δ</mi><mo>⁢</mo><mi>S</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex12.m2" class="ltx_Math" alttext="\displaystyle=\int_{a}^{b}L(q+\delta q,\dot{q}+\delta\dot{q})dt-S[q,\dot{q},t]" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>q</mi><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow></mrow><mo>,</mo><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>-</mo><mrow><mi>S</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>q</mi><mo>,</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>,</mo><mi>t</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex13" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex13.m2" class="ltx_Math" alttext="\displaystyle=S+\int_{a}^{b}\left[\delta q\frac{\partial}{\partial{q}}L+\delta%
+\dot{q}\frac{\partial}{\partial{\dot{q}}}L\right]dt-S" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>S</mi><mo>+</mo><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mrow><mo>[</mo><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow><mo>+</mo><mrow><mi>δ</mi><mo>⁢</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>]</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow><mo>-</mo><mi>S</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+<tr id="S0.Ex14" class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.Ex14.m2" class="ltx_Math" alttext="\displaystyle=\int_{a}^{b}\delta q\left[\frac{\partial}{\partial{q}}L-\frac{d}%
+{d{t}}{\frac{\partial}{\partial{\dot{q}}}L}\right]dt+\delta q\frac{\partial}{%
+\partial{\dot{q}}}L\Big{|}_{a}^{b}=0." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow><mo>-</mo><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>]</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>+</mo><msubsup><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mi>L</mi></mrow><mo fence="true" maxsize="160%" minsize="160%">|</mo></mrow><mi>a</mi><mi>b</mi></msubsup></mrow><mo>=</mo><mn>0</mn></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Two conditions come to our aid. First, we’re only interested in the neighboring paths that still begin at <math id="p10.m12" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> and end at <math id="p10.m13" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>, which corresponds to the condition <math id="p10.m14" class="ltx_Math" alttext="\delta q=0" display="inline"><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow><mo>=</mo><mn>0</mn></mrow></math> at <math id="p10.m15" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> and <math id="p10.m16" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>, which lets us cancel the final term. Second, between those two points, we’re interested in the paths which <em class="ltx_emph ltx_font_italic">do</em> vary, for which <math id="p10.m17" class="ltx_Math" alttext="\delta q\neq 0" display="inline"><mrow><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi></mrow><mo>≠</mo><mn>0</mn></mrow></math>.
+This leads us to the condition</p>
+<table id="S0.E8" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E8.m1" class="ltx_Math" alttext="\int_{a}^{b}\delta q\left[\frac{\partial}{\partial{q}}L-\frac{d}{d{t}}{\frac{%
+\partial}{\partial{\dot{q}}}L}\right]dt=0." display="block"><mrow><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>δ</mi><mo>⁢</mo><mi>q</mi><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow><mo>-</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>]</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(8)</span></td>
+</tr>
+</table>
+<p class="ltx_p">The fundamental theorem of the calculus of variations is that for continuous functions <math id="p10.m18" class="ltx_Math" alttext="f(t),g(t)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> with <math id="p10.m19" class="ltx_Math" alttext="g(t)\neq 0\ \forall t\in(a,b)" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mrow><mpadded width="+5pt"><mn>0</mn></mpadded><mo>⁢</mo><mrow><mo>∀</mo><mi>t</mi></mrow></mrow><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>,</p>
+<table id="S0.E9" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E9.m1" class="ltx_Math" alttext="\int_{a}^{b}f(t)g(t)\,dt=0\quad\Longrightarrow\quad f(t)=0\;\;\forall t\in(a,b)." display="block"><mrow><mrow><mrow><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="4.2pt" stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>0</mn><mo mathvariant="italic" separator="true"> </mo><mo>⟹</mo></mrow></mrow><mo mathvariant="italic" separator="true"> </mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mpadded width="+5.6pt"><mn>0</mn></mpadded><mo>⁢</mo><mrow><mo>∀</mo><mi>t</mi></mrow></mrow><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(9)</span></td>
+</tr>
+</table>
+<p class="ltx_p">Using this theorem, we obtain</p>
+<table id="S0.E10" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E10.m1" class="ltx_Math" alttext="\frac{\partial}{\partial{q}}L-\frac{d}{d{t}}\left(\frac{\partial}{\partial{%
+\dot{q}}}L\right)=0." display="block"><mrow><mrow><mrow><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>q</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow><mo>-</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac><mo>⁢</mo><mrow><mo>(</mo><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow><mo>)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(10)</span></td>
+</tr>
+</table>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p">This condition, one of the fundamental equations of the calculus of variations, is called the <em class="ltx_emph ltx_font_italic">Euler–Lagrange condition</em>. When presented with a problem in the calculus of variations, the first thing one usually does is to ask why one simply doesn’t plug the problem’s <math id="p11.m1" class="ltx_Math" alttext="L" display="inline"><mi>L</mi></math> into this equation and solve.</p>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">Recall our shortest-path problem, where we had arrived at</p>
+<table id="S0.E11" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E11.m1" class="ltx_Math" alttext="S=\int_{a}^{b}L\ dx=\int_{x1}^{x2}\sqrt{1+f^{\prime}(x)^{2}}\ dx." display="block"><mrow><mrow><mi>S</mi><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mpadded width="+5pt"><mi>L</mi></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><msubsup><mo largeop="true" symmetric="true">∫</mo><mrow><mi>x</mi><mo>⁢</mo><mn>1</mn></mrow><mrow><mi>x</mi><mo>⁢</mo><mn>2</mn></mrow></msubsup><mrow><mpadded width="+5pt"><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mpadded><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(11)</span></td>
+</tr>
+</table>
+<p class="ltx_p">Here, <math id="p12.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> takes the place of <math id="p12.m2" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>, <math id="p12.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> takes the place of <math id="p12.m4" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math>, and (8) becomes</p>
+<table id="S0.E12" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E12.m1" class="ltx_Math" alttext="\frac{\partial}{\partial{f}}L-\frac{d}{d{x}}{\frac{\partial}{\partial{f^{%
+\prime}}}L}=0" display="block"><mrow><mrow><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>f</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow><mo>-</mo><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><msup><mi>f</mi><mo>′</mo></msup></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(12)</span></td>
+</tr>
+</table>
+<p class="ltx_p">Even with <math id="p12.m5" class="ltx_Math" alttext="\frac{\partial}{\partial{f}}L=0" display="inline"><mrow><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>f</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow><mo>=</mo><mn>0</mn></mrow></math>, this is still ugly. However, because <math id="p12.m6" class="ltx_Math" alttext="\frac{\partial}{\partial{f}}L=0" display="inline"><mrow><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><mi>f</mi></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow><mo>=</mo><mn>0</mn></mrow></math>, we can use the Beltrami identity,</p>
+<table id="S0.E13" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E13.m1" class="ltx_Math" alttext="L-q^{\prime}{\frac{\partial}{\partial{q^{\prime}}}L}=C." display="block"><mrow><mrow><mrow><mi>L</mi><mo>-</mo><mrow><msup><mi>q</mi><mo>′</mo></msup><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><msup><mi>q</mi><mo>′</mo></msup></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>=</mo><mi>C</mi></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(13)</span></td>
+</tr>
+</table>
+<p class="ltx_p">(For the derivation of this useful little trick, see the corresponding entry.) Now we must simply solve</p>
+<table id="S0.E14" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E14.m1" class="ltx_Math" alttext="\sqrt{1+f^{\prime}(x)^{2}}-f^{\prime}(x){\frac{\partial}{\partial{f^{\prime}}}%
+L}=C" display="block"><mrow><mrow><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt><mo>-</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mo>⁡</mo><msup><mi>f</mi><mo>′</mo></msup></mrow></mfrac><mo>⁢</mo><mi>L</mi></mrow></mrow><mo>=</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(14)</span></td>
+</tr>
+</table>
+<p class="ltx_p">which looks just as daunting, but quickly reduces to</p>
+<table id="S0.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E15"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E15.m1" class="ltx_Math" alttext="\displaystyle\sqrt{1+f^{\prime}(x)^{2}}-f^{\prime}(x)\frac{\frac{1}{2}2f^{%
+\prime}(x)}{\sqrt{1+f^{\prime}(x)^{2}}}" display="inline"><mrow><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt><mo>-</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mn>2</mn><mo>⁢</mo><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E15.m2" class="ltx_Math" alttext="\displaystyle=C" display="inline"><mrow><mi></mi><mo>=</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(15)</span></td>
+</tr></tbody>
+<tbody id="S0.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E16.m1" class="ltx_Math" alttext="\displaystyle\frac{1+f^{\prime}(x)^{2}-f^{\prime}(x)^{2}}{\sqrt{1+f^{\prime}(x%
+)^{2}}}" display="inline"><mstyle displaystyle="true"><mfrac><mrow><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>-</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mfrac></mstyle></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E16.m2" class="ltx_Math" alttext="\displaystyle=C" display="inline"><mrow><mi></mi><mo>=</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(16)</span></td>
+</tr></tbody>
+<tbody id="S0.E17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E17.m1" class="ltx_Math" alttext="\displaystyle\frac{1}{\sqrt{1+f^{\prime}(x)^{2}}}" display="inline"><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mfrac></mstyle></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E17.m2" class="ltx_Math" alttext="\displaystyle=C" display="inline"><mrow><mi></mi><mo>=</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(17)</span></td>
+</tr></tbody>
+<tbody id="S0.E18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E18.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)" display="inline"><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E18.m2" class="ltx_Math" alttext="\displaystyle=\sqrt{\frac{1}{C^{2}}-1}=m." display="inline"><mrow><mrow><mi></mi><mo>=</mo><msqrt><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>C</mi><mn>2</mn></msup></mfrac></mstyle><mo>-</mo><mn>1</mn></mrow></msqrt><mo>=</mo><mi>m</mi></mrow><mo>.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(18)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">That is, the slope of the curve representing the shortest path between two points is a constant, which means the searched curve, i.e. the extremal of this variational problem, must be a straight line. Through this lengthy process, we’ve proved that a straight line is the shortest distance between two points.</p>
+</div>
+<div id="p13" class="ltx_para">
+<p class="ltx_p">To find the actual function <math id="p13.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> given endpoints <math id="p13.m2" class="ltx_Math" alttext="(x_{1},y_{1})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></math> and <math id="p13.m3" class="ltx_Math" alttext="(x_{2},y_{2})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></math>, simply integrate with respect to <math id="p13.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>:</p>
+<table id="S0.E19" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E19.m1" class="ltx_Math" alttext="f(x)=\int f^{\prime}(x)dx=\int bdx=mx+d" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo largeop="true" symmetric="true">∫</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo largeop="true" symmetric="true">∫</mo><mrow><mi>b</mi><mo>⁢</mo><mrow><mo>𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>d</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(19)</span></td>
+</tr>
+</table>
+<p class="ltx_p">and then apply the boundary conditions</p>
+<table id="S0.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="S0.E20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E20.m1" class="ltx_Math" alttext="\displaystyle f(x_{1})" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E20.m2" class="ltx_Math" alttext="\displaystyle=y_{1}=mx_{1}+d" display="inline"><mrow><mi></mi><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>d</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(20)</span></td>
+</tr></tbody>
+<tbody id="S0.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="S0.E21.m1" class="ltx_Math" alttext="\displaystyle f(x_{2})" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="S0.E21.m2" class="ltx_Math" alttext="\displaystyle=y_{2}=mx_{2}+d" display="inline"><mrow><mi></mi><mo>=</mo><msub><mi>y</mi><mn>2</mn></msub><mo>=</mo><mrow><mrow><mi>m</mi><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mi>d</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(21)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Subtracting the first condition from the second, we get <math id="p13.m5" class="ltx_Math" alttext="m=\frac{y_{2}-y_{1}}{x_{2}-x_{1}}" display="inline"><mrow><mi>m</mi><mo>=</mo><mfrac><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>-</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>-</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac></mrow></math>, the standard equation for the slope of a line. Solving for <math id="p13.m6" class="ltx_Math" alttext="d=y_{1}-mx_{1}" display="inline"><mrow><mi>d</mi><mo>=</mo><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>-</mo><mrow><mi>m</mi><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></mrow></math>, we get</p>
+<table id="S0.E22" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="S0.E22.m1" class="ltx_Math" alttext="f(x)=\frac{y_{2}-y_{1}}{x_{2}-x_{1}}(x-x_{1})+y_{1}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mfrac><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>-</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>-</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>-</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><msub><mi>y</mi><mn>1</mn></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(22)</span></td>
+</tr>
+</table>
+<p class="ltx_p">which is the basic equation for a line passing through <math id="p13.m7" class="ltx_Math" alttext="(x_{1},y_{1})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></math> and <math id="p13.m8" class="ltx_Math" alttext="(x_{2},y_{2})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>y</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">The solution to the brachistochrone problem, while slightly more complicated, follows along exactly the same lines.
+</p>
+<table class="ltx_tabular ltx_align_right ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l ltx_border_t">Title</td>
+<td class="ltx_td ltx_align_left ltx_border_r ltx_border_t">calculus of variations</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Canonical name</td>
+<td class="ltx_td ltx_align_left ltx_border_r">CalculusOfVariations</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Date of creation</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:20:48</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified on</td>
+<td class="ltx_td ltx_align_left ltx_border_r">2013-03-22 12:20:48</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Owner</td>
+<td class="ltx_td ltx_align_left ltx_border_r">rspuzio (6075)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Last modified by</td>
+<td class="ltx_td ltx_align_left ltx_border_r">rspuzio (6075)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Numerical id</td>
+<td class="ltx_td ltx_align_left ltx_border_r">16</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Author</td>
+<td class="ltx_td ltx_align_left ltx_border_r">rspuzio (6075)</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Entry type</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Topic</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 49K05</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Classification</td>
+<td class="ltx_td ltx_align_left ltx_border_r">msc 47A60</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TaylorSeries</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LinearFunctional</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">BeltramiIdentity</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">EulerLagrangeDifferentialEquation</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">TheoremForLocallyIntegrableFunctions</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">Extremal</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">EquationOfCatenaryViaCalculusOfVariations</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">LeastSurfaceOfRevolution</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">BrachistochroneCurve</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_l">Related topic</td>
+<td class="ltx_td ltx_align_left ltx_border_r">SpeediestInclinedPlane</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_l">Defines</td>
+<td class="ltx_td ltx_align_left ltx_border_b ltx_border_r">brachistochrone problem</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_page_logo">Generated  on Fri Feb  9 21:48:36 2018 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
